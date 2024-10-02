@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Card, CardContent, Typography, Grid, CardActionArea } from '@mui/material';
-import WordDetailModal from './wordDetails';
+import { Card, CardContent, Typography, CardActionArea } from '@mui/material';
+import WordDetailModal from './wordDetails'; 
 
 const WordList = ({ words }) => {
   // State to control modal visibility and selected word
@@ -9,35 +9,36 @@ const WordList = ({ words }) => {
 
   // Function to handle opening the modal and setting the selected word
   const handleOpenModal = (word) => {
-    setSelectedWord(word);
-    setIsModalOpen(true);
+    setSelectedWord(word); // Set the selected word to be displayed in the modal
+    setIsModalOpen(true);  // Open the modal
   };
 
   // Function to handle closing the modal
   const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedWord(null);
+    setIsModalOpen(false); // Close the modal
+    setSelectedWord(null); // Reset the selected word
   };
 
   return (
     <>
-      <Grid container spacing={2}>
+      <div container spacing={2}> {/* Grid container to hold the list of words, with spacing between items */}
         {words.map((word) => (
-          <Grid item xs={12} sm={6} md={4} key={word._id}>
+          <div item xs={12} sm={6} md={4} key={word._id} style={{margin:'5px',}}> {/* Grid item for each word, responsible for responsiveness */}
             {/* Wrap the Card with CardActionArea to make it clickable */}
-            <CardActionArea onClick={() => handleOpenModal(word)}>
-              <Card>
+            <CardActionArea onClick={() => handleOpenModal(word)}> 
+              <Card style={{backgroundColor:'#720D5D'}}>
                 <CardContent>
-                  <Typography variant="h5">{word.word}</Typography>
-                  <Typography variant="body2">Meaning: {word.meaning}</Typography>
+                  {/* Displaying the word and its meaning inside the card */}
+                  <Typography variant="h5" style={{color:'white'}}>{word.word}</Typography>
+                  <Typography variant="body2" style={{color:'white'}}>Meaning: {word.meaning}</Typography>
                 </CardContent>
               </Card>
             </CardActionArea>
-          </Grid>
+          </div>
         ))}
-      </Grid>
+      </div>
 
-      {/* Render the modal when a word is selected */}
+      {/* reender the modal when a word is selected */}
       {selectedWord && (
         <WordDetailModal
           open={isModalOpen}

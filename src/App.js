@@ -6,6 +6,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        {/** Use routes for navigate the application and imaport homepage path */}
         <Route path="/" element={<HomePage />} />
       </Routes>
     </Router>
