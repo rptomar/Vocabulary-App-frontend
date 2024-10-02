@@ -60,7 +60,7 @@ const HomePage = () => {
         color="primary" 
         style={{ marginBottom: '20px' }}
       >
-        Add Word
+        Add and search Word
       </Button>
 
       {/* display an error message if there's an error */}
