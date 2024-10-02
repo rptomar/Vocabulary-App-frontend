@@ -65,7 +65,7 @@ const HomePage = () => {
 
       {/* display an error message if there's an error */}
       {error && <Typography color="error" style={{ marginBottom: '20px' }}>
-        <p>Error: the free version of oxford api limited to the first letter of the alphabets, Kindly search word start with "A"</p>
+        <p>Error: the free version of oxford api limited to the first letter of the alphabets, Kindly search word start with "A" like "allow"</p>
         <p>Or</p>
         {error}
       </Typography>}
